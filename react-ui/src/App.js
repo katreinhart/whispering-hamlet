@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import Header from './Header';
 
-if(NODE_ENV === 'development'){
-    const URL = require('../config.js')
+if(NODE_ENV === 'production'){
+  const URL = process.env.URI;
 }
 
 else {
-    const URL = process.env.URI;
+  const URL = require('../config.js')
 }
 
 
