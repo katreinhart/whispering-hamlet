@@ -6,7 +6,10 @@ const apiRouter = require('../api') ;
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(`mongodb://kat-test:asdf1234@ds157621.mlab.com:57621/kat-mern-comment-box`);
+const DB_LOGIN = process.env.DB_LOGIN || require('../config.js').dbLogin;
+const DB_PATH = process.env.DB_PATH || require('../config.js').dbPath;
+
+mongoose.connect(`mongodb://${DB_LOGIN}@${DB_PATH}/kat-mern-comment-box`);
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
