@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { SortableContainer, SortableHandle, SortableElement, arrayMove } from 'react-sortable-hoc';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import PrefItem from './PrefItem';
-// import { removePref } from '../actions';
+import { removePref } from './actions';
 
 const DragHandle = SortableHandle(() => <span tabIndex = "0" className="drag-handle">&#9776; </span>);
 
@@ -30,13 +30,13 @@ const PrefsList = SortableContainer (({items}) => {
     )
   }
 );
-//
-// function mapStateToProps(state) {
-//   return {
-//     items: state.prefsList
-//   }
-// }
+
+function mapStateToProps(state) {
+  return {
+    items: state.prefsList
+  }
+}
 
 
-export default PrefsList;
-// export default connect(mapStateToProps, { removePref })(PrefsList);
+// export default PrefsList;
+export default connect(mapStateToProps, { removePref })(PrefsList);

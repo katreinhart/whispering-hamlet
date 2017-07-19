@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import { arrayMove } from 'react-sortable-hoc';
-// import { connect } from 'react-redux';
+import { arrayMove } from 'react-sortable-hoc';
+import { connect } from 'react-redux';
 
 import PrefItem from './PrefItem';
 import CategoriesList from './CategoriesList';
 import PrefsList from './PrefsList';
 
-// import { sortPrefs, importPrefs } from '../actions';
+import { sortPrefs, importPrefs } from './actions';
 
 class PreferenceCenter extends Component  {
   constructor() {
@@ -39,35 +39,35 @@ class PreferenceCenter extends Component  {
 
   componentDidUpdate() {
     console.log("componentDidUpdate");
-    // axios.put(this.props.url, {
-    //   "preferences": this.props.prefsList
-    // })
+    axios.put(this.props.url, {
+      "preferences": this.props.prefsList
+    })
   }
 
-  // onSortEnd = ({oldIndex, newIndex}) => {
-  //   this.props.sortPrefs(arrayMove(this.props.prefsList, oldIndex, newIndex));
-  // }
+  onSortEnd = ({oldIndex, newIndex}) => {
+    this.props.sortPrefs(arrayMove(this.props.prefsList, oldIndex, newIndex));
+  }
 
   render() {
     return(
       <div className="prefs-center">
         <div className="row">
-          {/* {
+          {
             this.state.name !== "" ?
               <p>Welcome back, {this.state.name}!</p>
             :
               <p></p>
-          } */}
+          }
         </div>
         <div className="row"><p>Help us show you what you want to see on your homepage! You can add, remove, and re-order your preferences here.</p></div>
         <div className="row">
           <div className="pref-list columns six">
             <h4>My Categories</h4>
             <p>Things you want to see! <em>Click & drag the</em> &#9776; <em>handle to reorder.</em></p>
-            {/* <PrefsList
+            <PrefsList
               useDragHandle
               onSortEnd = {this.onSortEnd}
-            /> */}
+            />
           </div>
           <div className="cats-list columns six">
             <h4>Category Choices</h4>
@@ -86,5 +86,5 @@ function mapStateToProps(state) {
   }
 }
 
-export default PreferenceCenter;
-// connect(mapStateToProps, { sortPrefs, importPrefs })(PreferenceCenter);
+// export default PreferenceCenter;
+connect(mapStateToProps, { sortPrefs, importPrefs })(PreferenceCenter);

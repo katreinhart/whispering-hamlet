@@ -10,7 +10,9 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-store.subscribe(() => {});
+store.subscribe(() => {
+  console.log("Redux store listening");
+});
 
 ReactDOM.render(
   <Provider store={store}>
