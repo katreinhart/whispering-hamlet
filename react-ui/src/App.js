@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import Header from './Header';
 import PreferenceCenter from './PreferenceCenter';
 
-let URL = '';
+let URL = 'https://whispering-hamlet-19229.herokuapp.com/';
 
-if(process.env.NODE_ENV === 'production'){
-  URL = process.env.URI;
-}
-
-else {
-  URL = 'http://localhost:5000'
-}
+// if(process.env.NODE_ENV === 'production'){
+//   URL = process.env.URI;
+// }
+//
+// else {
+//   URL = 'http://localhost:5000'
+// }
 
 
 export default class App extends Component {
