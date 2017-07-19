@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 
-if(NODE_ENV === 'production'){
+if(process.env === 'production'){
   const URL = process.env.URI;
 }
 
