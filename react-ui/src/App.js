@@ -9,8 +9,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      pageHeader: "Preference Center",
-      url: `${URI}/api/prefs/596ea67a92ee13b276b283be`
+      pageHeader: "Preference Center"//,
+      // url: `${URI}/api/prefs/596ea67a92ee13b276b283be`
     }
   }
   render() {
