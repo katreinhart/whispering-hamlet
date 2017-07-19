@@ -4,8 +4,8 @@ import PreferenceCenter from './PreferenceCenter';
 
 let URL = '';
 
-if(process.env === 'production'){
-  URL = process.env.URI;
+if(process.ENV === 'production'){
+  URL = process.ENV.URI;
 }
 
 else {
