@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 // import { arrayMove } from 'react-sortable-hoc';
 // import { connect } from 'react-redux';
 
@@ -10,30 +10,30 @@ import React, { Component } from 'react';
 // import { sortPrefs, importPrefs } from '../actions';
 
 class PreferenceCenter extends Component  {
-  // constructor() {
-  //   super();
-  //   this.state = {
-  //     name: ""
-  //   };
-  // }
+  constructor() {
+    super();
+    this.state = {
+      name: ""
+    };
+  }
 
-  // loadPrefsFromServer () {
-  //   axios.get(this.props.url)
-  //     .then(res => {
-  //       if(res.data.preferences) {
-  //         this.props.importPrefs(res.data.preferences);
-  //         this.setState({
-  //           name: res.data.userName
-  //         });
-  //       }
-  //     }).catch(err => {
-  //       console.error(err);
-  //     });
-  // }
+  loadPrefsFromServer () {
+    axios.get(this.props.url)
+      .then(res => {
+        if(res.data.preferences) {
+          this.props.importPrefs(res.data.preferences);
+          this.setState({
+            name: res.data.userName
+          });
+        }
+      }).catch(err => {
+        console.error(err);
+      });
+  }
 
   componentDidMount () {
     console.log("componentDidMount");
-    // this.loadPrefsFromServer();
+    this.loadPrefsFromServer();
   }
 
   componentDidUpdate() {
