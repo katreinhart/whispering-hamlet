@@ -2,10 +2,23 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const apiRouter = require('../api') ;
-var cors = require('cors');
+// var cors = require('cors');
 
 const app = express();
-// app.use(cors);
+
+
+// var whitelist = ['http://localhost:3000', 'http://localhost:5000', 'https://whispering-hamlet-19229.herokuapp.com/']
+// var corsOptions = {
+//   origin: function(origin, callback) {
+//     if(whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error('Not allowed by CORS'))
+//     }
+//   }
+// }
+
+// app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 5000;
 
