@@ -5,6 +5,8 @@ const apiRouter = require('../api') ;
 var cors = require('cors');
 
 const app = express();
+// app.use(cors);
+
 const PORT = process.env.PORT || 5000;
 
 const DB_LOGIN = process.env.DB_LOGIN || require('../config.js').dbLogin;
@@ -14,7 +16,7 @@ mongoose.connect(`mongodb://${DB_LOGIN}@${DB_PATH}/kat-mern-comment-box`);
 
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
-app.use(cors);
+
 
 app.use('/api', apiRouter);
 
