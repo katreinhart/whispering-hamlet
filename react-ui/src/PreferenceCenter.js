@@ -3,9 +3,9 @@ import axios from 'axios';
 // import { arrayMove } from 'react-sortable-hoc';
 // import { connect } from 'react-redux';
 
-// import PrefItem from './PrefItem';
-// import CategoriesList from './CategoriesList';
-// import PrefsList from './PrefsList';
+import PrefItem from './PrefItem';
+import CategoriesList from './CategoriesList';
+import PrefsList from './PrefsList';
 
 // import { sortPrefs, importPrefs } from '../actions';
 
@@ -21,6 +21,7 @@ class PreferenceCenter extends Component  {
     axios.get(this.props.url)
       .then(res => {
         if(res.data.preferences) {
+          console.log(res.data.preferences);
           this.props.importPrefs(res.data.preferences);
           this.setState({
             name: res.data.userName
@@ -71,7 +72,7 @@ class PreferenceCenter extends Component  {
           <div className="cats-list columns six">
             <h4>Category Choices</h4>
             <p>Choose what you'd like to see from here!</p>
-            {/* <CategoriesList /> */}
+            <CategoriesList />
           </div>
         </div>
       </div>
@@ -79,11 +80,11 @@ class PreferenceCenter extends Component  {
   }
 }
 
-// function mapStateToProps(state) {
-//   return {
-//     prefsList: state.prefsList
-//   }
-// }
+function mapStateToProps(state) {
+  return {
+    prefsList: state.prefsList
+  }
+}
 
 export default PreferenceCenter;
 // connect(mapStateToProps, { sortPrefs, importPrefs })(PreferenceCenter);
