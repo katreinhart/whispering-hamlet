@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import PreferenceCenter from './PreferenceCenter';
 
 if(process.env === 'production'){
   const URL = process.env.URI;
@@ -20,7 +21,11 @@ export default class App extends Component {
   }
   render() {
     return(
-      <Header message={this.state.pageHeader}/>
+      <div>
+        <Header message={this.state.pageHeader}/>
+        <PreferenceCenter url={this.state.url} />
+      </div>
+
     )
   }
 }
