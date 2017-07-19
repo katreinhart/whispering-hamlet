@@ -16,13 +16,28 @@ router.get('/', (req, res) => {
 });
 
 router.route('/prefs')
-  .get(function(req, res) {
+  .get((req, res) => {
     Preferences.find(function(err, prefs) {
       if(err)
         res.send(err);
       res.json(prefs)
     });
   });
+router.route('/prefs')
+    .post((req, res) => {
+      var prefs = new Preferences();
+      prefs.userName = req.body.name;
+      prefs.createdAt = Date.now();
+      prefs.preferences = req.body.preferences;
+      prefs.save(function(err) {
+        if (err)
+          res.send(err);
+        res.json({
+          message: 'Prefs successfully added!'//,
+          // customerID: prefs._uid
+        });
+      });
+    });
 
 
 module.exports = router;

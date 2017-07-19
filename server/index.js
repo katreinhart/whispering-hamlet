@@ -11,11 +11,6 @@ mongoose.connect(`mongodb://kat-test:asdf1234@ds157621.mlab.com:57621/kat-mern-c
 // Priority serve any static files.
 app.use(express.static(path.resolve(__dirname, '../react-ui/build')));
 
-// Answer API requests.
-// app.get('/api', function (req, res) {
-//   res.set('Content-Type', 'application/json');
-//   res.send('{"message":"Hello from the custom server!"}');
-// });
 
 app.use('/api', apiRouter);
 
