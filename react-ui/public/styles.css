@@ -1,0 +1,103 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+}
+
+.row {
+  width: 100%;
+}
+
+header {
+  background-color: darken( #444, 10%);
+  min-height: 25px;
+  text-align: left;
+  font-family: Georgia, serif;
+  font-style: italic;
+  padding: 10px;
+  color: white;
+}
+
+nav {
+  background-color: #444;
+  text-align: right;
+  color: white;
+  min-height: 35px;
+  padding: 10px 0;
+}
+
+nav ul li {
+  display: inline;
+  padding-right: 10px;
+}
+
+.preference-menu {
+  height: 90vh;
+}
+
+.menu-box {
+  background-color: #555;
+  color: white;
+  padding: 10px;
+}
+
+.main {
+  padding: 10px;
+  margin: 0;
+
+}
+
+.main h3 {
+  text-align: center;
+}
+
+.sortable-list, .cats-list {
+  list-style: none;
+}
+
+.list-item {
+  border: 1px solid grey;
+  background-color: #BADA55;
+  width: 90%;
+  padding: 5px 5px 5px 10px;
+
+}
+
+.list-item.un{
+  background-color: lighten(#CFEC93, 20%);
+  color: #666;
+  font-style: italic;
+}
+
+.pref-item {
+  display: inline-block;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.add-button, .remove-button {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.drag-handle {
+  cursor: move;
+}
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 5px 0 5px 10px;
+}
