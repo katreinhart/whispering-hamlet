@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Header from './Header';
 
-const URI;
+if(process.env === 'development'){
+    const URI = require('../config.js')
+}
 
-if(import uriPath from '../config.js')
-    URI = uriPath;
-else
-    URI = process.env.URI;
+else {
+    const URI = process.env.URI;
+}
+
 
 export default class App extends Component {
   constructor() {
